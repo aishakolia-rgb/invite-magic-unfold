@@ -106,7 +106,7 @@ function Envelope({ onOpen }: { onOpen: () => void }) {
       />
 
       <p className="tracking-invite animate-veil-in mb-10 text-center text-[0.65rem] uppercase text-muted-foreground">
-        Page 1 · Digital Envelope
+         {"\n"}
       </p>
 
       <button
