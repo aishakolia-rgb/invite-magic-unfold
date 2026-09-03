@@ -254,3 +254,21 @@
 @utility animate-veil-in {
   animation: veil-in 1s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
+
+@utility linen {
+  background-image:
+    repeating-linear-gradient(0deg, oklch(1 0 0 / 0.045) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, oklch(0 0 0 / 0.05) 0 1px, transparent 1px 3px);
+}
+
+@utility foil-rule {
+  background: linear-gradient(90deg, transparent, var(--gold-foil), transparent);
+}
+
+@keyframes foil-sheen {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(220%); }
+}
+@utility animate-foil-sheen {
+  animation: foil-sheen 5.5s ease-in-out infinite;
+}
