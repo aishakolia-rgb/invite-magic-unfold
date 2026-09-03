@@ -134,27 +134,52 @@ function Envelope({ onOpen }: { onOpen: () => void }) {
           </div>
 
           {/* envelope body */}
-          <div className="absolute inset-0 z-20 rounded-sm bg-envelope shadow-envelope">
-            <div className="absolute inset-0 rounded-sm bg-[radial-gradient(circle_at_30%_20%,oklch(1_0_0/0.55),transparent_60%)]" />
+          <div className="absolute inset-0 z-20 overflow-hidden rounded-sm bg-slate shadow-envelope">
+            <div className="linen absolute inset-0 opacity-70" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,oklch(1_0_0/0.12),transparent_65%)]" />
+
+            {/* lower diagonal folds */}
             <div className="absolute inset-x-0 bottom-0 top-1/2">
-              <div className="absolute inset-0 bg-envelope-flap/60 [clip-path:polygon(0_100%,50%_18%,100%_100%)]" />
+              <div className="absolute inset-0 bg-slate-flap/50 [clip-path:polygon(0_100%,50%_18%,100%_100%)]" />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent,oklch(0_0_0/0.18))] [clip-path:polygon(0_100%,50%_18%,100%_100%)]" />
             </div>
 
-            <div className="absolute inset-x-8 top-[42%] z-30 text-center">
-              <p className="tracking-invite text-[0.6rem] uppercase text-primary/70">To</p>
-              <p className="script-name mt-4 text-4xl leading-[1.15]">Mr &amp; Mrs</p>
-              <p className="script-name text-4xl leading-[1.15]">Ahmed Khan</p>
+            {/* inner gold frame */}
+            <div className="pointer-events-none absolute inset-4 border border-gold-foil/25" />
+            <div className="pointer-events-none absolute inset-[1.4rem] border border-gold-foil/10" />
+
+            {/* corner ornaments */}
+            <div className="pointer-events-none absolute left-6 top-6 size-8 border-l border-t border-gold-foil/35" />
+            <div className="pointer-events-none absolute right-6 top-6 size-8 border-r border-t border-gold-foil/35" />
+            <div className="pointer-events-none absolute bottom-6 left-6 size-8 border-b border-l border-gold-foil/35" />
+            <div className="pointer-events-none absolute bottom-6 right-6 size-8 border-b border-r border-gold-foil/35" />
+
+            <div className="absolute inset-x-8 top-[38%] z-30 text-center">
+              <div className="foil-rule mx-auto h-px w-20 opacity-50" />
+              <p className="tracking-invite mt-5 text-[0.6rem] uppercase text-gold-foil">
+                Personal Invitation
+              </p>
+              <p className="script-name mt-4 text-4xl leading-[1.15] text-primary-foreground">
+                Mr &amp; Mrs
+              </p>
+              <p className="script-name text-4xl leading-[1.15] text-primary-foreground">
+                Ahmed Khan
+              </p>
+              <div className="foil-rule mx-auto mt-5 h-px w-20 opacity-50" />
             </div>
 
-
-            <div className="absolute inset-x-0 bottom-6 z-30 text-center">
-              <p className="tracking-invite text-[0.6rem] uppercase text-primary/70">
+            <div className="absolute inset-x-0 bottom-7 z-30 text-center">
+              <p className="tracking-invite text-[0.6rem] uppercase text-gold-foil/75">
                 Please open
               </p>
-              <p className="tracking-invite text-[0.6rem] uppercase text-primary/70">
+              <p className="tracking-invite text-[0.6rem] uppercase text-gold-foil/75">
                 your invitation
               </p>
+              <div className="mx-auto mt-3 size-3 rotate-45 border-b border-r border-gold-foil/50" />
             </div>
+
+            {/* lining peek */}
+            <div className="foil-rule absolute inset-x-0 bottom-0 h-[3px] opacity-30" />
           </div>
 
           {/* top flap */}
@@ -164,8 +189,17 @@ function Envelope({ onOpen }: { onOpen: () => void }) {
             }`}
             style={{ transformStyle: "preserve-3d" }}
           >
-            <div className="absolute inset-0 bg-envelope-flap [clip-path:polygon(0_0,100%_0,50%_100%)]" />
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,oklch(1_0_0/0.5),transparent)] [clip-path:polygon(0_0,100%_0,50%_100%)]" />
+            <div className="absolute inset-0 bg-slate-flap [clip-path:polygon(0_0,100%_0,50%_100%)]" />
+            <div className="linen absolute inset-0 opacity-70 [clip-path:polygon(0_0,100%_0,50%_100%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,oklch(1_0_0/0.16),transparent_70%)] [clip-path:polygon(0_0,100%_0,50%_100%)]" />
+            {/* gold edge along the flap fold */}
+            <div className="absolute inset-0 [clip-path:polygon(0_0,100%_0,50%_100%)]">
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_86%,var(--gold-foil)_92%,transparent_97%)] opacity-60" />
+            </div>
+            {/* sheen sweep */}
+            <div className="absolute inset-0 overflow-hidden [clip-path:polygon(0_0,100%_0,50%_100%)]">
+              <div className="animate-foil-sheen absolute inset-y-0 w-1/3 -skew-x-12 bg-[linear-gradient(90deg,transparent,oklch(1_0_0/0.14),transparent)]" />
+            </div>
           </div>
 
           {/* wax seal */}
