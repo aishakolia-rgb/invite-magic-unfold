@@ -315,7 +315,7 @@ function PersonalCard() {
         </p>
         <p className="mt-2 font-display text-lg text-foreground">{GUEST.rsvpBy}</p>
         <p className="tracking-invite mt-10 text-[0.55rem] uppercase text-muted-foreground">
-          Invitation no. {GUEST.invitationNo}
+          RSVP - QUANITAH 082 575 3753
         </p>
       </div>
     </article>
