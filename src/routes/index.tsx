@@ -368,7 +368,7 @@ function Gratitude() {
         Should you wish to bless us with a wedding gift, a contribution towards
         our future together would be sincerely appreciated.
       </p>
-      <div className="mx-auto mt-10 max-w-xs border-t border-border/70 pt-6 text-left">
+      <div className="mx-auto mt-10 max-w-xs border-t border-border/70 pt-6 text-center">
         <p className="tracking-invite text-[0.55rem] uppercase text-primary">
           Banking details
         </p>
