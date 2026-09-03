@@ -214,7 +214,7 @@ function MainInvitation() {
             <br />
             as we celebrate the Nikkah of
           </p>
-          <h1 className="script-name mt-6 text-6xl sm:text-7xl">Aishah</h1>
+          <h1 className="script-name mt-6 text-6xl sm:text-7xl">Aisha</h1>
           <p className="font-display text-xl text-accent">&amp;</p>
           <p className="script-name text-6xl sm:text-7xl">Ibrahim</p>
           <p className="tracking-invite mt-5 text-[0.65rem] uppercase text-primary/80">
@@ -406,7 +406,7 @@ function Invitation() {
           <header className="text-center">
             <p className="font-display text-2xl tracking-[0.4em] text-primary">A / I</p>
             <h1 className="mt-6 text-3xl tracking-[0.3em] text-primary sm:text-5xl">
-              AISHAH &amp; IBRAHIM
+              AISHA &amp; IBRAHIM
             </h1>
             <p className="tracking-invite mt-4 text-[0.6rem] uppercase text-muted-foreground">
               Digital wedding invitation suite
