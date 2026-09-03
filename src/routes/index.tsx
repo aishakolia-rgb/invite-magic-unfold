@@ -3,8 +3,10 @@ import { useEffect, useRef, useState } from "react";
 import {
   Calendar,
   Clock,
+  Coffee,
   Gift,
   Heart,
+  Landmark,
   MapPin,
   Phone,
   Mail,
