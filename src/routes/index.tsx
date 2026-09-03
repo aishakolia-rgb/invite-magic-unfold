@@ -138,14 +138,14 @@ function Envelope({ onOpen }: { onOpen: () => void }) {
               <div className="absolute inset-0 bg-envelope-flap/60 [clip-path:polygon(0_100%,50%_18%,100%_100%)]" />
             </div>
 
-            <div className="absolute inset-x-8 top-[12%] text-center">
+            <div className="absolute inset-x-8 top-[52%] z-30 text-center">
               <p className="tracking-invite text-[0.6rem] uppercase text-primary/70">To</p>
               <p className="script-name mt-4 text-4xl leading-[1.15]">Mr &amp; Mrs</p>
               <p className="script-name text-4xl leading-[1.15]">Ahmed Khan</p>
             </div>
 
 
-            <div className="absolute inset-x-0 bottom-12 text-center">
+            <div className="absolute inset-x-0 bottom-6 z-30 text-center">
               <p className="tracking-invite text-[0.6rem] uppercase text-primary/70">
                 Please open
               </p>
@@ -173,7 +173,7 @@ function Envelope({ onOpen }: { onOpen: () => void }) {
             aria-hidden="true"
             width={816}
             height={816}
-            className={`absolute left-1/2 top-1/2 z-40 w-24 -translate-x-1/2 -translate-y-1/2 drop-shadow-md ${
+            className={`absolute left-1/2 top-[76%] z-40 w-24 -translate-x-1/2 -translate-y-1/2 drop-shadow-md ${
               opening ? "animate-seal-break" : "transition-transform duration-500 group-hover:scale-105"
             }`}
           />
