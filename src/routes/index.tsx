@@ -3,8 +3,10 @@ import { useEffect, useRef, useState } from "react";
 import {
   Calendar,
   Clock,
+  Coffee,
   Gift,
   Heart,
+  Landmark,
   MapPin,
   Phone,
   Mail,
@@ -223,6 +225,11 @@ function MainInvitation() {
 
           <div className="mx-auto grid max-w-md grid-cols-2 gap-6 text-center">
             <div>
+              <Landmark
+                className="mx-auto mb-3 size-7 stroke-primary/80"
+                strokeWidth={1}
+                aria-hidden="true"
+              />
               <p className="tracking-invite text-[0.6rem] uppercase text-primary">
                 Nikkah Ceremony
               </p>
@@ -235,6 +242,11 @@ function MainInvitation() {
               </p>
             </div>
             <div className="border-l border-border/70">
+              <Coffee
+                className="mx-auto mb-3 size-7 stroke-primary/80"
+                strokeWidth={1}
+                aria-hidden="true"
+              />
               <p className="tracking-invite text-[0.6rem] uppercase text-primary">
                 Wedding High Tea
               </p>
