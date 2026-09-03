@@ -37,7 +37,7 @@ const GUEST = {
   name: "Mr & Mrs Ahmed Khan",
   guests: 2,
   invitationNo: "AI-027",
-  rsvpBy: "15 September 2026",
+  rsvpBy: "01 October 2026",
 };
 
 function Petals() {
@@ -338,7 +338,7 @@ function CelebrationGuide() {
         ))}
       </div>
       <p className="script-name mt-14 text-center text-4xl leading-tight">
-        Your presence and du‘ā mean the world to us.
+        Your presence and duas mean the world to us.
       </p>
     </article>
   );
@@ -370,7 +370,7 @@ function Gratitude() {
           Ref: {GUEST.invitationNo}
         </p>
       </div>
-      <p className="script-name mt-10 text-4xl">Jazākumullāhu Khairan</p>
+      <p className="script-name mt-10 text-4xl">Jazakallahu Khairan</p>
     </article>
   );
 }
