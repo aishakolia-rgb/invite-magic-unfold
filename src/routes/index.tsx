@@ -364,7 +364,7 @@ function Gratitude() {
       </h2>
       <Ornament />
       <p className="mx-auto max-w-md font-display text-base italic leading-7 text-muted-foreground">
-        Your presence and sincere du‘ās are the greatest gift we could receive.
+        Your presence and sincere duas are the greatest gift we could receive.
         Should you wish to bless us with a wedding gift, a contribution towards
         our future together would be sincerely appreciated.
       </p>
