@@ -405,8 +405,8 @@ function Invitation() {
         <div ref={letterRef} className="relative mx-auto max-w-5xl px-4 py-16 sm:px-8">
           <header className="text-center">
             <p className="font-display text-2xl tracking-[0.4em] text-primary">A / I</p>
-            <h1 className="mt-6 text-3xl tracking-[0.3em] text-primary sm:text-5xl">
-              AISHA &amp; IBRAHEEM
+            <h1 className="script-name mt-6 text-5xl sm:text-6xl">
+              Aisha &amp; Ibraheem
             </h1>
             <p className="tracking-invite mt-4 text-[0.6rem] uppercase text-muted-foreground">
               Digital wedding invitation suite
