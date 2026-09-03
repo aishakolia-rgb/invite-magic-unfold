@@ -72,11 +72,11 @@
 
 :root {
   --radius: 0.25rem;
-  --background: oklch(0.955 0.012 90);
+  --background: oklch(0.938 0.028 90);
   --foreground: oklch(0.42 0.045 258);
-  --card: oklch(0.975 0.008 92);
+  --card: oklch(0.962 0.016 92);
   --card-foreground: oklch(0.42 0.045 258);
-  --popover: oklch(0.975 0.008 92);
+  --popover: oklch(0.962 0.016 92);
   --popover-foreground: oklch(0.42 0.045 258);
   --primary: oklch(0.5 0.06 258);
   --primary-foreground: oklch(0.97 0.008 90);
@@ -184,9 +184,17 @@
 
 @utility paper {
   background-image:
-    radial-gradient(circle at 20% 10%, oklch(1 0 0 / 0.9), transparent 55%),
-    linear-gradient(160deg, oklch(0.985 0.006 85), oklch(0.955 0.012 88));
+    radial-gradient(circle at 20% 10%, oklch(1 0 0 / 0.85), transparent 55%),
+    linear-gradient(160deg, oklch(0.968 0.014 88), oklch(0.932 0.024 90));
   box-shadow: var(--shadow-card);
+}
+
+@utility pearl {
+  border-radius: 9999px;
+  background: radial-gradient(circle at 32% 28%, oklch(1 0 0), oklch(0.94 0.012 95) 42%, oklch(0.78 0.02 270) 100%);
+  box-shadow:
+    0 1px 3px oklch(0.45 0.03 260 / 0.35),
+    inset 0 -1px 2px oklch(0.7 0.02 270 / 0.5);
 }
 
 @utility rule-ornament {
