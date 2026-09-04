@@ -140,10 +140,13 @@ function Envelope({ onOpen }: { onOpen: () => void }) {
               <div className="absolute inset-0 bg-envelope-flap/60 [clip-path:polygon(0_100%,50%_18%,100%_100%)]" />
             </div>
 
-            <div className="absolute inset-x-8 top-[42%] z-30 text-center">
-              <p className="tracking-invite text-[0.6rem] uppercase text-primary/70">To</p>
-              <p className="script-name mt-4 text-4xl leading-[1.15]">Mr &amp; Mrs</p>
+            <div className="absolute inset-x-8 top-[38%] z-30 text-center">
+              <p className="monogram text-5xl">A &amp; I</p>
+              <p className="script-name mt-3 text-4xl leading-[1.15]">Mr &amp; Mrs</p>
               <p className="script-name text-4xl leading-[1.15]">Ahmed Khan</p>
+              <p className="font-display mt-4 text-sm italic leading-6 text-primary/75">
+                you are warmly invited to share in the beginning of our forever.
+              </p>
             </div>
 
 
