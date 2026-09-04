@@ -110,6 +110,7 @@
 
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-script: "Tangerine", "Great Vibes", cursive;
+  --font-arabic: "Aref Ruqaa", "Amiri", serif;
   --font-body: "Jost", system-ui, sans-serif;
   --shadow-card: 0 30px 60px -30px oklch(0.38 0.078 258 / 0.28);
   --shadow-envelope: 0 40px 80px -35px oklch(0.38 0.078 258 / 0.4);
@@ -180,6 +181,18 @@
   font-family: var(--font-script);
   line-height: 0.9;
   color: var(--primary);
+}
+
+@utility arabic-calligraphy {
+  font-family: var(--font-arabic);
+  line-height: 1.9;
+  font-weight: 400;
+}
+
+@utility monogram {
+  font-family: var(--font-script);
+  color: var(--gold);
+  line-height: 0.9;
 }
 
 @utility paper {

@@ -140,10 +140,13 @@ function Envelope({ onOpen }: { onOpen: () => void }) {
               <div className="absolute inset-0 bg-envelope-flap/60 [clip-path:polygon(0_100%,50%_18%,100%_100%)]" />
             </div>
 
-            <div className="absolute inset-x-8 top-[42%] z-30 text-center">
-              <p className="tracking-invite text-[0.6rem] uppercase text-primary/70">To</p>
-              <p className="script-name mt-4 text-4xl leading-[1.15]">Mr &amp; Mrs</p>
+            <div className="absolute inset-x-8 top-[46%] z-30 text-center">
+              <p className="font-display text-3xl tracking-[0.35em] text-primary">A / I</p>
+              <p className="script-name mt-3 text-4xl leading-[1.15]">Mr &amp; Mrs</p>
               <p className="script-name text-4xl leading-[1.15]">Ahmed Khan</p>
+              <p className="font-display mt-4 text-sm italic leading-6 text-primary/75">
+                you are warmly invited to share in the beginning of our forever.
+              </p>
             </div>
 
 
@@ -175,7 +178,7 @@ function Envelope({ onOpen }: { onOpen: () => void }) {
             aria-hidden="true"
             width={816}
             height={816}
-            className={`absolute left-1/2 top-[78%] z-40 w-24 -translate-x-1/2 -translate-y-1/2 drop-shadow-md ${
+            className={`absolute left-1/2 top-[82%] z-40 w-24 -translate-x-1/2 -translate-y-1/2 drop-shadow-md ${
               opening ? "animate-seal-break" : "transition-transform duration-500 group-hover:scale-105"
             }`}
           />
@@ -203,7 +206,7 @@ function MainInvitation() {
       />
       <div className="relative grid gap-8 px-6 py-14 sm:px-12 md:grid-cols-[1.05fr_0.95fr] md:items-center">
         <div className="text-center">
-          <p className="font-display text-2xl text-primary/80" dir="rtl">
+          <p className="arabic-calligraphy text-3xl text-primary/80 sm:text-4xl" dir="rtl">
             بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْم
           </p>
           <Ornament />
@@ -265,9 +268,13 @@ function MainInvitation() {
           </div>
 
           <blockquote className="mx-auto mt-10 max-w-md border border-border/70 px-6 py-5">
-            <p className="font-display text-sm italic leading-6 text-muted-foreground">
+            <p
+              className="arabic-calligraphy mb-4 text-lg text-primary/80 sm:text-xl"
+              dir="rtl"
+            >
               وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
-              <br />
+            </p>
+            <p className="font-display text-sm italic leading-6 text-muted-foreground">
               “And among His signs is that He created for you spouses from among
               yourselves, that you may find tranquility in them, and He placed
               between you affection and mercy.”
@@ -304,7 +311,7 @@ function PersonalCard() {
         className="pointer-events-none absolute -right-14 -top-14 w-52 -scale-x-100 opacity-70"
       />
       <div className="relative mx-auto max-w-sm">
-        <p className="font-display text-3xl tracking-widest text-primary">A / I</p>
+        <p className="font-display text-4xl tracking-[0.35em] text-primary">A / I</p>
         <Ornament />
         <p className="tracking-invite text-[0.6rem] uppercase text-muted-foreground">
           Reserved for
@@ -416,7 +423,7 @@ function Invitation() {
       {opened && (
         <div ref={letterRef} className="relative mx-auto max-w-5xl px-4 py-16 sm:px-8">
           <header className="text-center">
-            <p className="font-display text-2xl tracking-[0.4em] text-primary">A / I</p>
+            <p className="font-display text-3xl tracking-[0.35em] text-primary">A / I</p>
             <h1 className="script-name mt-6 text-5xl sm:text-6xl">
               Aisha &amp; Ibraheem
             </h1>
