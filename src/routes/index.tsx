@@ -141,7 +141,7 @@ function Envelope({ onOpen }: { onOpen: () => void }) {
             </div>
 
             <div className="absolute inset-x-8 top-[38%] z-30 text-center">
-              <p className="script-name text-5xl leading-[1.4] tracking-wide">A / I</p>
+              <p className="font-display text-3xl tracking-[0.35em] text-primary">A / I</p>
               <p className="script-name mt-3 text-4xl leading-[1.15]">Mr &amp; Mrs</p>
               <p className="script-name text-4xl leading-[1.15]">Ahmed Khan</p>
               <p className="font-display mt-4 text-sm italic leading-6 text-primary/75">
@@ -311,7 +311,7 @@ function PersonalCard() {
         className="pointer-events-none absolute -right-14 -top-14 w-52 -scale-x-100 opacity-70"
       />
       <div className="relative mx-auto max-w-sm">
-        <p className="script-name text-6xl leading-[1.4] tracking-wide">A / I</p>
+        <p className="font-display text-4xl tracking-[0.35em] text-primary">A / I</p>
         <Ornament />
         <p className="tracking-invite text-[0.6rem] uppercase text-muted-foreground">
           Reserved for
@@ -423,7 +423,7 @@ function Invitation() {
       {opened && (
         <div ref={letterRef} className="relative mx-auto max-w-5xl px-4 py-16 sm:px-8">
           <header className="text-center">
-            <p className="script-name text-5xl leading-[1.4] tracking-wide">A / I</p>
+            <p className="font-display text-3xl tracking-[0.35em] text-primary">A / I</p>
             <h1 className="script-name mt-6 text-5xl sm:text-6xl">
               Aisha &amp; Ibraheem
             </h1>
