@@ -39,7 +39,7 @@ const GUEST = {
   name: "Mr & Mrs Ahmed Khan",
   guests: 2,
   invitationNo: "AI-027",
-  rsvpBy: "01 October 2026",
+  rsvpBy: "25 September 2026",
 };
 
 function Petals() {
