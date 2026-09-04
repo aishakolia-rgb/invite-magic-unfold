@@ -265,9 +265,13 @@ function MainInvitation() {
           </div>
 
           <blockquote className="mx-auto mt-10 max-w-md border border-border/70 px-6 py-5">
-            <p className="font-display text-sm italic leading-6 text-muted-foreground">
+            <p
+              className="arabic-calligraphy mb-4 text-lg text-primary/80 sm:text-xl"
+              dir="rtl"
+            >
               وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
-              <br />
+            </p>
+            <p className="font-display text-sm italic leading-6 text-muted-foreground">
               “And among His signs is that He created for you spouses from among
               yourselves, that you may find tranquility in them, and He placed
               between you affection and mercy.”
