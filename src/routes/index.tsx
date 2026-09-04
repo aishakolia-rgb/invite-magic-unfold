@@ -347,31 +347,31 @@ const guideItems = [
   { icon: Phone, title: "Contact Information", copy: "Get in touch with us" },
 ];
 
-function CelebrationGuide() {
-  return (
-    <article className="paper animate-veil-in relative overflow-hidden rounded-sm border border-border/70 px-6 py-14 sm:px-12">
-      <p className="tracking-invite text-center text-[0.6rem] uppercase text-muted-foreground">
-        Celebration Guide
-      </p>
-      <div className="mt-10 grid grid-cols-2 gap-8 sm:grid-cols-5">
-        {guideItems.map(({ icon: Icon, title, copy }) => (
-          <div key={title} className="text-center">
-            <span className="mx-auto flex size-14 items-center justify-center rounded-full border border-border bg-background/70 transition-transform duration-300 hover:scale-105">
-              <Icon className="size-5 stroke-primary" strokeWidth={1.25} />
-            </span>
-            <p className="tracking-invite mt-4 text-[0.55rem] uppercase text-primary">
-              {title}
-            </p>
-            <p className="mt-2 font-display text-xs text-muted-foreground">{copy}</p>
-          </div>
-        ))}
-      </div>
-      <p className="script-name mt-14 text-center text-4xl leading-tight">
-        Your presence and duas mean the world to us.
-      </p>
-    </article>
-  );
-}
+// function CelebrationGuide() {
+//   return (
+//     <article className="paper animate-veil-in relative overflow-hidden rounded-sm border border-border/70 px-6 py-14 sm:px-12">
+//       <p className="tracking-invite text-center text-[0.6rem] uppercase text-muted-foreground">
+//         Celebration Guide
+//       </p>
+//       <div className="mt-10 grid grid-cols-2 gap-8 sm:grid-cols-5">
+//         {guideItems.map(({ icon: Icon, title, copy }) => (
+//           <div key={title} className="text-center">
+//             <span className="mx-auto flex size-14 items-center justify-center rounded-full border border-border bg-background/70 transition-transform duration-300 hover:scale-105">
+//               <Icon className="size-5 stroke-primary" strokeWidth={1.25} />
+//             </span>
+//             <p className="tracking-invite mt-4 text-[0.55rem] uppercase text-primary">
+//               {title}
+//             </p>
+//             <p className="mt-2 font-display text-xs text-muted-foreground">{copy}</p>
+//           </div>
+//         ))}
+//       </div>
+//       <p className="script-name mt-14 text-center text-4xl leading-tight">
+//         Your presence and duas mean the world to us.
+//       </p>
+//     </article>
+//   );
+// }
 
 function Gratitude() {
   return (
@@ -436,7 +436,7 @@ function Invitation() {
           <div className="mt-8 space-y-10">
             <MainInvitation />
             <PersonalCard />
-            <CelebrationGuide />
+            {/*<CelebrationGuide />*/}
             <Gratitude />
           </div>
 
@@ -446,13 +446,30 @@ function Invitation() {
             and make us a source of peace for one another.
           </footer>
 
+          {/*<div className="mt-10 flex justify-center gap-3">*/}
+          {/*  <a*/}
+          {/*    href="#"*/}
+          {/*    className="tracking-invite inline-flex items-center gap-2 border border-primary/40 bg-primary px-6 py-3 text-[0.6rem] uppercase text-primary-foreground transition-opacity hover:opacity-90"*/}
+          {/*  >*/}
+          {/*    <Heart className="size-3 fill-current stroke-none" /> RSVP*/}
+          {/*  </a>*/}
+          {/*  <button*/}
+          {/*    type="button"*/}
+          {/*    onClick={() => setOpened(false)}*/}
+          {/*    className="tracking-invite inline-flex items-center gap-2 border border-border px-6 py-3 text-[0.6rem] uppercase text-primary transition-colors hover:bg-secondary/60"*/}
+          {/*  >*/}
+          {/*    <Calendar className="size-3" /> Close envelope*/}
+          {/*  </button>*/}
+          {/*</div>*/}
+
           <div className="mt-10 flex justify-center gap-3">
             <a
-              href="#"
+              href="mailto:Quanitah@gema.co.za"
               className="tracking-invite inline-flex items-center gap-2 border border-primary/40 bg-primary px-6 py-3 text-[0.6rem] uppercase text-primary-foreground transition-opacity hover:opacity-90"
             >
               <Heart className="size-3 fill-current stroke-none" /> RSVP
             </a>
+
             <button
               type="button"
               onClick={() => setOpened(false)}
@@ -461,6 +478,7 @@ function Invitation() {
               <Calendar className="size-3" /> Close envelope
             </button>
           </div>
+
         </div>
       )}
     </main>
