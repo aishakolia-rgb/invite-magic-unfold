@@ -178,7 +178,7 @@ function Envelope({ onOpen }: { onOpen: () => void }) {
             aria-hidden="true"
             width={816}
             height={816}
-            className={`absolute left-1/2 top-[86%] z-40 w-24 -translate-x-1/2 -translate-y-1/2 drop-shadow-md ${
+            className={`absolute left-1/2 top-[82%] z-40 w-24 -translate-x-1/2 -translate-y-1/2 drop-shadow-md ${
               opening ? "animate-seal-break" : "transition-transform duration-500 group-hover:scale-105"
             }`}
           />
