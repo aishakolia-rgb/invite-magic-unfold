@@ -203,7 +203,7 @@ function MainInvitation() {
       />
       <div className="relative grid gap-8 px-6 py-14 sm:px-12 md:grid-cols-[1.05fr_0.95fr] md:items-center">
         <div className="text-center">
-          <p className="font-display text-2xl text-primary/80" dir="rtl">
+          <p className="arabic-calligraphy text-3xl text-primary/80 sm:text-4xl" dir="rtl">
             بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْم
           </p>
           <Ornament />
