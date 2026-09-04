@@ -425,7 +425,7 @@ function Invitation() {
       {opened && (
         <div ref={letterRef} className="relative mx-auto max-w-5xl px-4 py-16 sm:px-8">
           <header className="text-center">
-            <p className="font-display text-2xl tracking-[0.4em] text-primary">A / I</p>
+            <p className="script-name text-5xl tracking-wide">A / I</p>
             <h1 className="script-name mt-6 text-5xl sm:text-6xl">
               Aisha &amp; Ibraheem
             </h1>
