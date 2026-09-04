@@ -313,7 +313,7 @@ function PersonalCard() {
         className="pointer-events-none absolute -right-14 -top-14 w-52 -scale-x-100 opacity-70"
       />
       <div className="relative mx-auto max-w-sm">
-        <p className="font-display text-3xl tracking-widest text-primary">A / I</p>
+        <p className="script-name text-6xl tracking-wide">A / I</p>
         <Ornament />
         <p className="tracking-invite text-[0.6rem] uppercase text-muted-foreground">
           Reserved for
