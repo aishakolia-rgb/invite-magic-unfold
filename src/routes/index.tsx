@@ -208,17 +208,13 @@ function MainInvitation() {
           </p>
           <Ornament />
           <p className="tracking-invite text-[0.6rem] uppercase leading-6 text-muted-foreground">
-            Together with our families
-            <br />
-            we request the honour of your presence
-            <br />
-            as we celebrate the Nikkah of
+            WITH GRATEFUL HEARTS AND THE BLESSINGS OF OUR FAMILIES, WE REQUEST THE HONOUR OF YOUR PRESENCE AS WE CELEBATE THE NIKAAH OF AISHA AND IBRAHEEM&nbsp;
           </p>
           <h1 className="script-name mt-6 text-6xl sm:text-7xl">Aisha</h1>
           <p className="font-display text-xl text-accent">&amp;</p>
           <p className="script-name text-6xl sm:text-7xl">Ibraheem</p>
           <p className="tracking-invite mt-5 text-[0.65rem] uppercase text-primary/80">
-            Our forever begins
+            OUR FOREVER BEGINS TODAY
           </p>
 
           <Ornament />
@@ -234,11 +230,15 @@ function MainInvitation() {
                 Nikkah Ceremony
               </p>
               <p className="mt-3 font-display text-sm leading-6 text-muted-foreground">
+                Sunday, 18 October 2026
+                <br />
+                <span className="text-foreground">9:00 AM</span>
+                <br />
                 Pinelands Islamic Centre
                 <br />
                 Nursery Way, Pinelands
                 <br />
-                <span className="text-foreground">9:00 AM</span>
+                Please join us as we begin this beautiful journey.
               </p>
             </div>
             <div className="border-l border-border/70">
@@ -251,17 +251,23 @@ function MainInvitation() {
                 Wedding High Tea
               </p>
               <p className="mt-3 font-display text-sm leading-6 text-muted-foreground">
+                Sunday, 18 October 2026
+                <br />
+                <span className="text-foreground">4:00 PM (Guests arrive)</span>
+                <br />
+                High Tea at 4:30 PM
+                <br />
                 Café 51
                 <br />
-                <span className="text-foreground">4:00 PM</span>
-                <br />
-                (Guests arrive 3:30 PM)
+                51 Roodebloem Road, Woodstock
               </p>
             </div>
           </div>
 
           <blockquote className="mx-auto mt-10 max-w-md border border-border/70 px-6 py-5">
             <p className="font-display text-sm italic leading-6 text-muted-foreground">
+              وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+              <br />
               “And among His signs is that He created for you spouses from among
               yourselves, that you may find tranquility in them, and He placed
               between you affection and mercy.”
@@ -311,7 +317,11 @@ function PersonalCard() {
         <p className="font-display text-4xl text-primary">{GUEST.guests}</p>
         <Ornament />
         <p className="tracking-invite text-[0.6rem] uppercase text-muted-foreground">
-          Kindly RSVP before
+          YOUR PRESENCE WOULD BE A CHERISHED BLESSING
+          <br />
+          AS WE BEGIN THIS NEW CHAPTER TOGETHER.
+          <br />
+          KINDLY RSVP BY
         </p>
         <p className="mt-2 font-display text-lg text-foreground">{GUEST.rsvpBy}</p>
         <p className="tracking-invite mt-10 text-[0.55rem] uppercase text-muted-foreground">
@@ -375,11 +385,13 @@ function Gratitude() {
         <p className="mt-3 font-display text-sm leading-6 text-muted-foreground">
           A &amp; I Future Fund
           <br />
-          FNB · 627 254 96555
+          Standard Bank · 10 28 635 702 8
           <br />
-          Branch code 250655
+          Branch code 7654
           <br />
-          Ref: {GUEST.invitationNo}
+          Type Savings
+          <br />
+          Ref: AI-FutureFund
         </p>
       </div>
       <p className="script-name mt-10 text-4xl">Jazakallahu Khairan</p>
@@ -409,7 +421,7 @@ function Invitation() {
               Aisha &amp; Ibraheem
             </h1>
             <p className="tracking-invite mt-4 text-[0.6rem] uppercase text-muted-foreground">
-              Digital wedding invitation suite
+              DIGITAL WEDDING INVITATION
             </p>
             <Ornament label="18 · 10 · 2026" />
           </header>
