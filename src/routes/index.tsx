@@ -141,9 +141,7 @@ function Envelope({ onOpen }: { onOpen: () => void }) {
             </div>
 
             <div className="absolute inset-x-8 top-[38%] z-30 text-center">
-              <p className="font-display text-2xl italic tracking-[0.25em] text-gold">
-                A &amp; I
-              </p>
+              <p className="script-name text-5xl tracking-wide">A / I</p>
               <p className="script-name mt-3 text-4xl leading-[1.15]">Mr &amp; Mrs</p>
               <p className="script-name text-4xl leading-[1.15]">Ahmed Khan</p>
               <p className="font-display mt-4 text-sm italic leading-6 text-primary/75">
