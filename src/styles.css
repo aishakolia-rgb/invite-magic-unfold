@@ -195,6 +195,29 @@
   line-height: 0.9;
 }
 
+@utility lace-trim {
+  height: 0.9rem;
+  background-image:
+    radial-gradient(circle at 0.45rem 0, oklch(0.985 0.005 90) 0.42rem, transparent 0.46rem),
+    radial-gradient(circle at 0.45rem 0, oklch(0.78 0.03 255 / 0.5) 0.46rem, transparent 0.5rem);
+  background-size: 0.9rem 0.9rem;
+  background-repeat: repeat-x;
+}
+
+@utility pearl-dots {
+  height: 0.7rem;
+  background-image: radial-gradient(
+    circle,
+    oklch(0.99 0.004 90) 20%,
+    oklch(0.88 0.015 255) 55%,
+    oklch(0.78 0.03 255) 75%,
+    transparent 78%
+  );
+  background-size: 0.7rem 0.7rem;
+  background-position: center;
+  background-repeat: repeat-x;
+}
+
 @utility paper {
   background-image:
     radial-gradient(circle at 20% 10%, oklch(1 0 0 / 0.9), transparent 55%),
