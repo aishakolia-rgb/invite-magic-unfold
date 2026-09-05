@@ -140,7 +140,12 @@ function Envelope({ onOpen }: { onOpen: () => void }) {
               <div className="absolute inset-0 bg-envelope-flap/60 [clip-path:polygon(0_100%,50%_18%,100%_100%)]" />
             </div>
 
-            <div className="absolute inset-x-8 top-[46%] z-30 text-center">
+            {/* lace + pearl motifs */}
+            <div className="lace-trim absolute inset-x-3 top-1 opacity-90" aria-hidden="true" />
+            <div className="lace-trim absolute inset-x-3 bottom-1 rotate-180 opacity-90" aria-hidden="true" />
+            <div className="pearl-dots absolute inset-x-8 top-[55%]" aria-hidden="true" />
+
+            <div className="absolute inset-x-8 top-[60%] z-30 text-center">
               <p className="font-display text-3xl tracking-[0.35em] text-primary">{"\n"}</p>
               <p className="script-name mt-3 text-4xl leading-[1.15]">Mr &amp; Mrs</p>
               <p className="script-name text-4xl leading-[1.15]">Ahmed Khan</p>
@@ -150,7 +155,7 @@ function Envelope({ onOpen }: { onOpen: () => void }) {
             </div>
 
 
-            <div className="absolute inset-x-0 bottom-6 z-30 text-center">
+            <div className="absolute inset-x-0 bottom-4 z-30 text-center">
               <p className="tracking-invite text-[0.6rem] uppercase text-primary/70">
                 Please open
               </p>
