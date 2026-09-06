@@ -72,7 +72,8 @@
 
 :root {
   --radius: 0.25rem;
-  --background: oklch(0.955 0.012 90);
+  /*WHITE BACKGROUND*/
+  --background: oklch(1 0 0);
   --foreground: oklch(0.42 0.045 258);
   --card: oklch(0.975 0.008 92);
   --card-foreground: oklch(0.42 0.045 258);
@@ -195,33 +196,16 @@
   line-height: 0.9;
 }
 
-@utility lace-trim {
-  height: 0.9rem;
-  background-image:
-    radial-gradient(circle at 0.45rem 0, oklch(0.985 0.005 90) 0.42rem, transparent 0.46rem),
-    radial-gradient(circle at 0.45rem 0, oklch(0.78 0.03 255 / 0.5) 0.46rem, transparent 0.5rem);
-  background-size: 0.9rem 0.9rem;
-  background-repeat: repeat-x;
-}
+/*@utility paper {*/
+/*  background-image:*/
+/*    radial-gradient(circle at 20% 10%, oklch(1 0 0 / 0.9), transparent 55%),*/
+/*    linear-gradient(160deg, oklch(0.985 0.006 85), oklch(0.955 0.012 88));*/
+/*  box-shadow: var(--shadow-card);*/
+/*}*/
 
-@utility pearl-dots {
-  height: 0.7rem;
-  background-image: radial-gradient(
-    circle,
-    oklch(0.99 0.004 90) 20%,
-    oklch(0.88 0.015 255) 55%,
-    oklch(0.78 0.03 255) 75%,
-    transparent 78%
-  );
-  background-size: 0.7rem 0.7rem;
-  background-position: center;
-  background-repeat: repeat-x;
-}
-
+/*WHITE PAPER*/
 @utility paper {
-  background-image:
-    radial-gradient(circle at 20% 10%, oklch(1 0 0 / 0.9), transparent 55%),
-    linear-gradient(160deg, oklch(0.985 0.006 85), oklch(0.955 0.012 88));
+  background: oklch(1 0 0);
   box-shadow: var(--shadow-card);
 }
 
