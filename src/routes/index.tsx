@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { type FormEvent, useEffect, useRef, useState } from "react";
 import {
   Calendar,
   Clock,
@@ -35,12 +35,57 @@ export const Route = createFileRoute("/")({
   component: Invitation,
 });
 
-const GUEST = {
-  name: "Mr & Mrs Ahmed Khan",
-  guests: 2,
-  invitationNo: "AI-027",
-  rsvpBy: "25 September 2026",
+// ---------------------------------------------------------------------------
+// Guest list
+//
+// Add every invited name (or household) here along with how many people
+// they're allowed to bring (including themselves). `aliases` are optional
+// alternate spellings that should also be accepted — matching ignores case,
+// punctuation and "&" vs "and", so you don't need an alias for every casing.
+// ---------------------------------------------------------------------------
+
+type Guest = {
+  name: string;
+  aliases?: string[];
+  allowedGuests: number;
+  rsvpBy?: string;
+  invitationNo?: string;
 };
+
+const RSVP_DEFAULT_DATE = "25 September 2026";
+
+const GUEST_LIST: Guest[] = [
+  {
+    name: "Mr & Mrs Ahmed Khan",
+    aliases: ["ahmed khan", "mr ahmed khan", "mrs ahmed khan"],
+    allowedGuests: 2,
+    invitationNo: "AI-027",
+  },
+  { name: "Fatima Osman", allowedGuests: 4 },
+  { name: "John & Sarah Peters", aliases: ["john peters", "sarah peters"], allowedGuests: 2 },
+  { name : "Aisha Kolia", allowedGuests: 2 },
+];
+
+function normalizeName(value: string) {
+  return value
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z\s]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function findGuest(input: string): Guest | null {
+  const normalizedInput = normalizeName(input);
+  if (!normalizedInput) return null;
+
+  return (
+    GUEST_LIST.find((guest) => {
+      const candidates = [guest.name, ...(guest.aliases ?? [])].map(normalizeName);
+      return candidates.includes(normalizedInput);
+    }) ?? null
+  );
+}
 
 function Petals() {
   const petals = Array.from({ length: 14 });
@@ -77,7 +122,84 @@ function Ornament({ label }: { label?: string }) {
   );
 }
 
-function Envelope({ onOpen }: { onOpen: () => void }) {
+function NameGate({ onVerified }: { onVerified: (guest: Guest) => void }) {
+  const [value, setValue] = useState("");
+  const [error, setError] = useState(false);
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const match = findGuest(value);
+    if (match) {
+      setError(false);
+      onVerified(match);
+    } else {
+      setError(true);
+    }
+  };
+
+  return (
+    <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-5">
+      <img
+        src={floral}
+        alt=""
+        aria-hidden="true"
+        width={1024}
+        height={1024}
+        className="animate-float-soft pointer-events-none absolute -left-24 -top-20 w-72 opacity-60 sm:w-96"
+      />
+      <img
+        src={floral}
+        alt=""
+        aria-hidden="true"
+        width={1024}
+        height={1024}
+        className="animate-float-soft pointer-events-none absolute -bottom-24 -right-24 w-72 rotate-180 opacity-50 sm:w-96"
+      />
+
+      <div className="relative w-full max-w-sm text-center">
+        <p className="tracking-invite text-[0.6rem] uppercase text-muted-foreground">
+          Before you open your invitation
+        </p>
+        <p className="script-name mt-4 text-4xl">What&apos;s your name?</p>
+        <Ornament />
+
+        <form onSubmit={handleSubmit} noValidate>
+          <label htmlFor="guest-name" className="sr-only">
+            Your full name
+          </label>
+          <input
+            id="guest-name"
+            type="text"
+            value={value}
+            onChange={(event) => {
+              setValue(event.target.value);
+              if (error) setError(false);
+            }}
+            placeholder="e.g. Aishah Kolia"
+            autoComplete="name"
+            aria-invalid={error}
+            aria-describedby={error ? "guest-name-error" : undefined}
+            className="w-full border-b border-border bg-transparent px-2 py-3 text-center font-display text-lg text-foreground outline-none focus:border-primary"
+          />
+          {error && (
+            <p id="guest-name-error" role="alert" className="mt-2 text-sm text-red-600">
+              We couldn&apos;t find that name on our guest list. Please check the spelling and try again.
+            </p>
+          )}
+
+          <button
+            type="submit"
+            className="tracking-invite mt-8 inline-flex items-center gap-2 border border-primary/40 bg-primary px-6 py-3 text-[0.6rem] uppercase text-primary-foreground transition-opacity hover:opacity-90"
+          >
+            Continue
+          </button>
+        </form>
+      </div>
+    </section>
+  );
+}
+
+function Envelope({ guest, onOpen }: { guest: Guest; onOpen: () => void }) {
   const [opening, setOpening] = useState(false);
 
   const open = () => {
@@ -135,15 +257,15 @@ function Envelope({ onOpen }: { onOpen: () => void }) {
 
           {/* envelope body */}
           <div className="absolute inset-0 z-20 rounded-sm bg-envelope shadow-envelope">
-            <div className="absolute inset-0 rounded-sm bg-[radial-gradient(circle_at_30%_20%,oklch(1_0_0/0.55),transparent_60%)]" />
+            <div
+              className="absolute inset-0 rounded-sm bg-[radial-gradient(circle_at_30%_20%,oklch(1_0_0/0.55),transparent_60%)]" />
             <div className="absolute inset-x-0 bottom-0 top-1/2">
               <div className="absolute inset-0 bg-envelope-flap/60 [clip-path:polygon(0_100%,50%_18%,100%_100%)]" />
             </div>
 
             <div className="absolute inset-x-8 top-[46%] z-30 text-center">
               <p className="font-display text-3xl tracking-[0.35em] text-primary">{"\n"}</p>
-              <p className="script-name mt-3 text-4xl leading-[1.15]">Mr &amp; Mrs</p>
-              <p className="script-name text-4xl leading-[1.15]">Ahmed Khan</p>
+              <p className="script-name mt-3 text-4xl leading-[1.15]">{guest.name}</p>
               <p className="font-display mt-4 text-sm italic leading-6 text-primary/75">
                 you are warmly invited to share in the beginning of our forever.
               </p>
@@ -161,14 +283,14 @@ function Envelope({ onOpen }: { onOpen: () => void }) {
           </div>
 
           {/* top flap */}
-          <div
-            className={`absolute inset-x-0 top-0 z-30 h-1/2 origin-top ${
+          <div className={`absolute inset-x-0 top-0 z-30 h-1/2 origin-top ${
               opening ? "animate-flap-open" : "transition-transform duration-700 group-hover:[transform:rotateX(-14deg)]"
             }`}
             style={{ transformStyle: "preserve-3d" }}
           >
             <div className="absolute inset-0 bg-envelope-flap [clip-path:polygon(0_0,100%_0,50%_100%)]" />
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,oklch(1_0_0/0.5),transparent)] [clip-path:polygon(0_0,100%_0,50%_100%)]" />
+            <div
+              className="absolute inset-0 bg-[linear-gradient(180deg,oklch(1_0_0/0.5),transparent)] [clip-path:polygon(0_0,100%_0,50%_100%)]" />
           </div>
 
           {/* wax seal */}
@@ -211,7 +333,8 @@ function MainInvitation() {
           </p>
           <Ornament />
           <p className="tracking-invite text-[0.6rem] uppercase leading-6 text-muted-foreground">
-            WITH GRATEFUL HEARTS AND THE BLESSINGS OF OUR FAMILIES, WE REQUEST THE HONOUR OF YOUR PRESENCE AS WE CELEBATE THE NIKAAH OF AISHA AND IBRAHEEM&nbsp;
+            WITH GRATEFUL HEARTS AND THE BLESSINGS OF OUR FAMILIES, WE REQUEST THE HONOUR OF YOUR PRESENCE AS WE
+            CELEBATE THE NIKAAH OF AISHA AND IBRAHEEM&nbsp;
           </p>
           <h1 className="script-name mt-6 text-6xl sm:text-7xl">Aisha</h1>
           <p className="font-display text-xl text-accent">&amp;</p>
@@ -268,11 +391,9 @@ function MainInvitation() {
           </div>
 
           <blockquote className="mx-auto mt-10 max-w-md border border-border/70 px-6 py-5">
-            <p
-              className="arabic-calligraphy mb-4 text-lg text-primary/80 sm:text-xl"
-              dir="rtl"
-            >
-              وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+            <p className="arabic-calligraphy mb-4 text-lg text-primary/80 sm:text-xl" dir="rtl">
+              وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم
+              مَّوَدَّةً وَرَحْمَةً
             </p>
             <p className="font-display text-sm italic leading-6 text-muted-foreground">
               “And among His signs is that He created for you spouses from among
@@ -298,9 +419,10 @@ function MainInvitation() {
   );
 }
 
-function PersonalCard() {
+function PersonalCard({ guest }: { guest: Guest }) {
   return (
-    <article className="paper animate-veil-in relative overflow-hidden rounded-sm border border-border/70 px-6 py-14 text-center sm:px-12">
+    <article
+      className="paper animate-veil-in relative overflow-hidden rounded-sm border border-border/70 px-6 py-14 text-center sm:px-12">
       <img
         src={floral}
         alt=""
@@ -316,12 +438,12 @@ function PersonalCard() {
         <p className="tracking-invite text-[0.6rem] uppercase text-muted-foreground">
           Reserved for
         </p>
-        <p className="script-name mt-3 text-5xl">{GUEST.name}</p>
+        <p className="script-name mt-3 text-5xl">{guest.name}</p>
         <Ornament />
         <p className="tracking-invite text-[0.6rem] uppercase text-muted-foreground">
           Guests reserved
         </p>
-        <p className="font-display text-4xl text-primary">{GUEST.guests}</p>
+        <p className="font-display text-4xl text-primary">{guest.allowedGuests}</p>
         <Ornament />
         <p className="tracking-invite text-[0.6rem] uppercase text-muted-foreground">
           YOUR PRESENCE WOULD BE A CHERISHED BLESSING
@@ -330,7 +452,9 @@ function PersonalCard() {
           <br />
           KINDLY RSVP BY
         </p>
-        <p className="mt-2 font-display text-lg text-foreground">{GUEST.rsvpBy}</p>
+        <p className="mt-2 font-display text-lg text-foreground">
+          {guest.rsvpBy ?? RSVP_DEFAULT_DATE}
+        </p>
         <p className="tracking-invite mt-10 text-[0.55rem] uppercase text-muted-foreground">
           RSVP - QUANITAH 082 575 3753
         </p>
@@ -375,7 +499,8 @@ const guideItems = [
 
 function Gratitude() {
   return (
-    <article className="paper animate-veil-in relative overflow-hidden rounded-sm border border-border/70 px-6 py-14 text-center sm:px-12">
+    <article
+      className="paper animate-veil-in relative overflow-hidden rounded-sm border border-border/70 px-6 py-14 text-center sm:px-12">
       <h2 className="tracking-invite text-[0.65rem] uppercase text-primary">
         A note of gratitude
       </h2>
@@ -407,6 +532,7 @@ function Gratitude() {
 }
 
 function Invitation() {
+  const [guest, setGuest] = useState<Guest | null>(null);
   const [opened, setOpened] = useState(false);
   const letterRef = useRef<HTMLDivElement>(null);
 
@@ -414,11 +540,20 @@ function Invitation() {
     if (opened) letterRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [opened]);
 
+  if (!guest) {
+    return (
+      <main className="relative min-h-screen bg-background">
+        <Petals />
+        <NameGate onVerified={setGuest} />
+      </main>
+    );
+  }
+
   return (
     <main className="relative min-h-screen bg-background">
       <Petals />
 
-      {!opened && <Envelope onOpen={() => setOpened(true)} />}
+      {!opened && <Envelope guest={guest} onOpen={() => setOpened(true)} />}
 
       {opened && (
         <div ref={letterRef} className="relative mx-auto max-w-5xl px-4 py-16 sm:px-8">
@@ -435,7 +570,7 @@ function Invitation() {
 
           <div className="mt-8 space-y-10">
             <MainInvitation />
-            <PersonalCard />
+            <PersonalCard guest={guest} />
             {/*<CelebrationGuide />*/}
             <Gratitude />
           </div>
@@ -446,27 +581,10 @@ function Invitation() {
             and make us a source of peace for one another.
           </footer>
 
-          {/*<div className="mt-10 flex justify-center gap-3">*/}
-          {/*  <a*/}
-          {/*    href="#"*/}
-          {/*    className="tracking-invite inline-flex items-center gap-2 border border-primary/40 bg-primary px-6 py-3 text-[0.6rem] uppercase text-primary-foreground transition-opacity hover:opacity-90"*/}
-          {/*  >*/}
-          {/*    <Heart className="size-3 fill-current stroke-none" /> RSVP*/}
-          {/*  </a>*/}
-          {/*  <button*/}
-          {/*    type="button"*/}
-          {/*    onClick={() => setOpened(false)}*/}
-          {/*    className="tracking-invite inline-flex items-center gap-2 border border-border px-6 py-3 text-[0.6rem] uppercase text-primary transition-colors hover:bg-secondary/60"*/}
-          {/*  >*/}
-          {/*    <Calendar className="size-3" /> Close envelope*/}
-          {/*  </button>*/}
-          {/*</div>*/}
-
           <div className="mt-10 flex justify-center gap-3">
             <a
               href="mailto:Quanitah@gema.co.za"
-              className="tracking-invite inline-flex items-center gap-2 border border-primary/40 bg-primary px-6 py-3 text-[0.6rem] uppercase text-primary-foreground transition-opacity hover:opacity-90"
-            >
+              className="tracking-invite inline-flex items-center gap-2 border border-primary/40 bg-primary px-6 py-3 text-[0.6rem] uppercase text-primary-foreground transition-opacity hover:opacity-90">
               <Heart className="size-3 fill-current stroke-none" /> RSVP
             </a>
 
