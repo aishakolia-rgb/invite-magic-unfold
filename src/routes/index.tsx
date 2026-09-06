@@ -300,7 +300,7 @@ function Envelope({ guest, onOpen }: { guest: Guest; onOpen: () => void }) {
             aria-hidden="true"
             width={716}
             height={716}
-            className={`absolute left-1/2 top-[82%] z-40 w-24 -translate-x-1/2 -translate-y-1/2 drop-shadow-md ${
+            className={`absolute left-1/2 top-[82%] z-40 w-16 -translate-x-1/2 -translate-y-1/2 drop-shadow-md ${
               opening ? "animate-seal-break" : "transition-transform duration-500 group-hover:scale-105"
             }`}
           />
