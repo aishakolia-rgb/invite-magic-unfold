@@ -175,7 +175,7 @@ function NameGate({ onVerified }: { onVerified: (guest: Guest) => void }) {
               setValue(event.target.value);
               if (error) setError(false);
             }}
-            placeholder="e.g. Aishah Kolia"
+            placeholder="e.g. Aisha Kolia"
             autoComplete="name"
             aria-invalid={error}
             aria-describedby={error ? "guest-name-error" : undefined}
