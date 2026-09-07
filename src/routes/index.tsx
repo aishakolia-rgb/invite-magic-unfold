@@ -383,7 +383,7 @@ function Envelope({ guest, onOpen }: { guest: Guest; onOpen: () => void }) {
             aria-hidden="true"
             width={516}
             height={516}
-            className={`absolute left-1/2 top-[82%] z-40 w-18 -translate-x-1/2 -translate-y-1/2 drop-shadow-md ${
+            className={`absolute left-1/2 top-[82%] z-40 w-16 -translate-x-1/2 -translate-y-1/2 drop-shadow-md ${
               opening ? "animate-seal-break" : "transition-transform duration-500 group-hover:scale-105"
             }`}
           />
@@ -416,7 +416,7 @@ function MainInvitation() {
           </p>
           <Ornament />
           <p className="tracking-invite text-[0.6rem] uppercase leading-6 text-muted-foreground">
-            WITH GRATEFUL HEARTS AND THE BLESSINGS OF OUR FAMILIES, WE REQUEST THE HONOUR OF YOUR PRESENCE AS WE CELEBRATE THE NIKAAH OF&nbsp;
+            WITH GRATEFUL HEARTS AND THE BLESSINGS OF OUR FAMILIES, WE HUMBLY REQUEST THE HONOUR OF YOUR PRESENCE AS WE CELEBRATE THE NIKAAH OF&nbsp;
           </p>
           <h1 className="script-name mt-6 text-6xl sm:text-7xl">Aisha</h1>
           <p className="font-display text-xl text-accent">&amp;</p>
