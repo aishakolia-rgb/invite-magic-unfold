@@ -56,14 +56,98 @@ const RSVP_DEFAULT_DATE = "25 September 2026";
 
 const GUEST_LIST: Guest[] = [
   {
-    name: "Mr & Mrs Ahmed Khan",
-    aliases: ["ahmed khan", "mr ahmed khan", "mrs ahmed khan"],
-    allowedGuests: 2,
-    invitationNo: "AI-027",
+    name: "Zaahidah Sampson",
+    allowedGuests: 1,
   },
-  { name: "Fatima Osman", allowedGuests: 4 },
-  { name: "John & Sarah Peters", aliases: ["john peters", "sarah peters"], allowedGuests: 2 },
-  { name : "Aisha Kolia", allowedGuests: 2 },
+  {
+    name: "Zulpha Sampson",
+    allowedGuests: 1,
+  },
+  {
+    name: "Aaliyah & Farhaan Khan",
+    aliases: ["aaliyah khan", "farhaan khan"],
+    allowedGuests: 2,
+  },
+  {
+    name: "Saubirah Isaacs",
+    allowedGuests: 1,
+  },
+  {
+    name: "Nurah Ebrahim",
+    allowedGuests: 1,
+  },
+  {
+    name: "Sabieroen Williams & Fayyaadh Omar",
+    aliases: ["sabieroen williams", "fayyaadh omar"],
+    allowedGuests: 2,
+  },
+  {
+    name: "Huda Manan",
+    allowedGuests: 1,
+  },
+  {
+    name: "Aaliyah Marcus",
+    allowedGuests: 1,
+  },
+  {
+    name: "Zakariyya Cloete",
+    allowedGuests: 1,
+  },
+  {
+    name: "Awadi Iddi",
+    allowedGuests: 1,
+  },
+  {
+    name: "Beyonce Cloete",
+    allowedGuests: 1,
+  },
+  {
+    name: "Hanaa Van Wyk",
+    allowedGuests: 1,
+  },
+  {
+    name: "Malikah Jabaar",
+    allowedGuests: 1,
+  },
+  {
+    name: "Aasiyah Ismail",
+    allowedGuests: 1,
+  },
+  {
+    name: "Taskeen Roodt",
+    allowedGuests: 1,
+  },
+  {
+    name: "Naadhirah Boltman",
+    allowedGuests: 1,
+  },
+  {
+    name: "Aqueelah Abdroff",
+    allowedGuests: 1,
+  },
+  {
+    name: "Iman Bester",
+    allowedGuests: 2,
+  },
+  {
+    name: "Aadam Sharief & Nurah Panday",
+    aliases: ["aadam sharief", "nurah panday"],
+    allowedGuests: 2,
+  },
+  {
+    name: "Mogamad Noor & Faradiebah Sharief",
+    aliases: ["mogamad noor", "faradiebah sharief"],
+    allowedGuests: 2,
+  },
+  {
+    name: "Esa Sharief",
+    allowedGuests: 1,
+  },
+  {
+    name: "Shaamil & Waseelah Sampson",
+    aliases: ["shaamil sampson", "waseelah sampson"],
+    allowedGuests: 2,
+  },
 ];
 
 function normalizeName(value: string) {
@@ -175,7 +259,7 @@ function NameGate({ onVerified }: { onVerified: (guest: Guest) => void }) {
               setValue(event.target.value);
               if (error) setError(false);
             }}
-            placeholder="e.g. Aisha Kolia"
+            placeholder="e.g. Ahmed Khan"
             autoComplete="name"
             aria-invalid={error}
             aria-describedby={error ? "guest-name-error" : undefined}
@@ -257,8 +341,7 @@ function Envelope({ guest, onOpen }: { guest: Guest; onOpen: () => void }) {
 
           {/* envelope body */}
           <div className="absolute inset-0 z-20 rounded-sm bg-envelope shadow-envelope">
-            <div
-              className="absolute inset-0 rounded-sm bg-[radial-gradient(circle_at_30%_20%,oklch(1_0_0/0.55),transparent_60%)]" />
+            <div className="absolute inset-0 rounded-sm bg-[radial-gradient(circle_at_30%_20%,oklch(1_0_0/0.55),transparent_60%)]" />
             <div className="absolute inset-x-0 bottom-0 top-1/2">
               <div className="absolute inset-0 bg-envelope-flap/60 [clip-path:polygon(0_100%,50%_18%,100%_100%)]" />
             </div>
@@ -283,14 +366,14 @@ function Envelope({ guest, onOpen }: { guest: Guest; onOpen: () => void }) {
           </div>
 
           {/* top flap */}
-          <div className={`absolute inset-x-0 top-0 z-30 h-1/2 origin-top ${
+          <div
+            className={`absolute inset-x-0 top-0 z-30 h-1/2 origin-top ${
               opening ? "animate-flap-open" : "transition-transform duration-700 group-hover:[transform:rotateX(-14deg)]"
             }`}
             style={{ transformStyle: "preserve-3d" }}
           >
             <div className="absolute inset-0 bg-envelope-flap [clip-path:polygon(0_0,100%_0,50%_100%)]" />
-            <div
-              className="absolute inset-0 bg-[linear-gradient(180deg,oklch(1_0_0/0.5),transparent)] [clip-path:polygon(0_0,100%_0,50%_100%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,oklch(1_0_0/0.5),transparent)] [clip-path:polygon(0_0,100%_0,50%_100%)]" />
           </div>
 
           {/* wax seal */}
@@ -300,7 +383,7 @@ function Envelope({ guest, onOpen }: { guest: Guest; onOpen: () => void }) {
             aria-hidden="true"
             width={716}
             height={716}
-            className={`absolute left-1/2 top-[82%] z-40 w-16 -translate-x-1/2 -translate-y-1/2 drop-shadow-md ${
+            className={`absolute left-1/2 top-[82%] z-40 w-24 -translate-x-1/2 -translate-y-1/2 drop-shadow-md ${
               opening ? "animate-seal-break" : "transition-transform duration-500 group-hover:scale-105"
             }`}
           />
@@ -333,12 +416,11 @@ function MainInvitation() {
           </p>
           <Ornament />
           <p className="tracking-invite text-[0.6rem] uppercase leading-6 text-muted-foreground">
-            WITH GRATEFUL HEARTS AND THE BLESSINGS OF OUR FAMILIES, WE REQUEST THE HONOUR OF YOUR PRESENCE AS WE
-            CELEBATE THE NIKAAH OF AISHA AND IBRAHEEM&nbsp;
+            WITH GRATEFUL HEARTS AND THE BLESSINGS OF OUR FAMILIES, WE REQUEST THE HONOUR OF YOUR PRESENCE AS WE CELEBRATE THE NIKAAH OF&nbsp;
           </p>
           <h1 className="script-name mt-6 text-6xl sm:text-7xl">Aisha</h1>
           <p className="font-display text-xl text-accent">&amp;</p>
-          <p className="script-name text-6xl sm:text-7xl">Ibraheem</p>
+          <p className="script-name text-6xl sm:text-7xl">Haafith Ibraheem</p>
           <p className="tracking-invite mt-5 text-[0.65rem] uppercase text-primary/80">
             OUR FOREVER BEGINS TODAY
           </p>
@@ -391,9 +473,11 @@ function MainInvitation() {
           </div>
 
           <blockquote className="mx-auto mt-10 max-w-md border border-border/70 px-6 py-5">
-            <p className="arabic-calligraphy mb-4 text-lg text-primary/80 sm:text-xl" dir="rtl">
-              وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم
-              مَّوَدَّةً وَرَحْمَةً
+            <p
+              className="arabic-calligraphy mb-4 text-lg text-primary/80 sm:text-xl"
+              dir="rtl"
+            >
+              وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
             </p>
             <p className="font-display text-sm italic leading-6 text-muted-foreground">
               “And among His signs is that He created for you spouses from among
@@ -421,8 +505,7 @@ function MainInvitation() {
 
 function PersonalCard({ guest }: { guest: Guest }) {
   return (
-    <article
-      className="paper animate-veil-in relative overflow-hidden rounded-sm border border-border/70 px-6 py-14 text-center sm:px-12">
+    <article className="paper animate-veil-in relative overflow-hidden rounded-sm border border-border/70 px-6 py-14 text-center sm:px-12">
       <img
         src={floral}
         alt=""
@@ -497,10 +580,108 @@ const guideItems = [
 //   );
 // }
 
+
+function Countdown() {
+  const targetDate = new Date("2026-10-18T00:00:00");
+
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  useEffect(() => {
+    const updateCountdown = () => {
+      const difference = targetDate.getTime() - new Date().getTime();
+
+      if (difference <= 0) {
+        setTimeLeft({
+          days: 0,
+          hours: 0,
+          minutes: 0,
+          seconds: 0,
+        });
+        return;
+      }
+
+      setTimeLeft({
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / (1000 * 60)) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      });
+    };
+
+    updateCountdown();
+
+    const interval = window.setInterval(updateCountdown, 1000);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
+  return (
+    <article className="paper animate-veil-in relative overflow-hidden rounded-sm border border-border/70 px-6 py-12 text-center sm:px-12">
+      <div className="relative mx-auto max-w-2xl">
+        {/*<p className="tracking-invite text-[0.6rem] uppercase text-muted-foreground">*/}
+        {/*  The countdown begins*/}
+        {/*</p>*/}
+
+        <p className="script-name mt-3 text-4xl sm:text-5xl">
+          Until our special day
+        </p>
+
+        <Ornament />
+
+        <div className="grid grid-cols-4 gap-3 sm:gap-6">
+          <div className="border border-border/70 px-2 py-4">
+            <p className="font-display text-3xl text-primary sm:text-4xl">
+              {String(timeLeft.days).padStart(2, "0")}
+            </p>
+            <p className="tracking-invite mt-2 text-[0.5rem] uppercase text-muted-foreground">
+              Days
+            </p>
+          </div>
+
+          <div className="border border-border/70 px-2 py-4">
+            <p className="font-display text-3xl text-primary sm:text-4xl">
+              {String(timeLeft.hours).padStart(2, "0")}
+            </p>
+            <p className="tracking-invite mt-2 text-[0.5rem] uppercase text-muted-foreground">
+              Hours
+            </p>
+          </div>
+
+          <div className="border border-border/70 px-2 py-4">
+            <p className="font-display text-3xl text-primary sm:text-4xl">
+              {String(timeLeft.minutes).padStart(2, "0")}
+            </p>
+            <p className="tracking-invite mt-2 text-[0.5rem] uppercase text-muted-foreground">
+              Minutes
+            </p>
+          </div>
+
+          <div className="border border-border/70 px-2 py-4">
+            <p className="font-display text-3xl text-primary sm:text-4xl">
+              {String(timeLeft.seconds).padStart(2, "0")}
+            </p>
+            <p className="tracking-invite mt-2 text-[0.5rem] uppercase text-muted-foreground">
+              Seconds
+            </p>
+          </div>
+        </div>
+
+        <p className="tracking-invite mt-8 text-[0.55rem] uppercase text-muted-foreground">
+          Sunday · 18 October 2026
+        </p>
+      </div>
+    </article>
+  );
+}
+
 function Gratitude() {
   return (
-    <article
-      className="paper animate-veil-in relative overflow-hidden rounded-sm border border-border/70 px-6 py-14 text-center sm:px-12">
+    <article className="paper animate-veil-in relative overflow-hidden rounded-sm border border-border/70 px-6 py-14 text-center sm:px-12">
       <h2 className="tracking-invite text-[0.65rem] uppercase text-primary">
         A note of gratitude
       </h2>
@@ -560,7 +741,7 @@ function Invitation() {
           <header className="text-center">
             <p className="font-display text-3xl tracking-[0.35em] text-primary">A / I</p>
             <h1 className="script-name mt-6 text-5xl sm:text-6xl">
-              Aisha &amp; Ibraheem
+              Aisha &amp; Haafith Ibraheem
             </h1>
             <p className="tracking-invite mt-4 text-[0.6rem] uppercase text-muted-foreground">
               DIGITAL WEDDING INVITATION
@@ -572,6 +753,7 @@ function Invitation() {
             <MainInvitation />
             <PersonalCard guest={guest} />
             {/*<CelebrationGuide />*/}
+            <Countdown />
             <Gratitude />
           </div>
 
@@ -584,7 +766,8 @@ function Invitation() {
           <div className="mt-10 flex justify-center gap-3">
             <a
               href="mailto:Quanitah@gema.co.za"
-              className="tracking-invite inline-flex items-center gap-2 border border-primary/40 bg-primary px-6 py-3 text-[0.6rem] uppercase text-primary-foreground transition-opacity hover:opacity-90">
+              className="tracking-invite inline-flex items-center gap-2 border border-primary/40 bg-primary px-6 py-3 text-[0.6rem] uppercase text-primary-foreground transition-opacity hover:opacity-90"
+            >
               <Heart className="size-3 fill-current stroke-none" /> RSVP
             </a>
 
