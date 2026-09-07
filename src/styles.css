@@ -66,6 +66,8 @@
 }
 
 :root {
+
+  color-scheme: light;
   --radius: 0.25rem;
 
   /* WHITE BACKGROUND */
@@ -131,8 +133,14 @@
     border-color: var(--color-border);
   }
 
+  html {
+    background-color: white;
+    color-scheme: light;
+  }
+
   body {
-    background-color: var(--color-background);
+    /*background-color: var(--color-background);*/
+    background-color: white;
     color: var(--color-foreground);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
