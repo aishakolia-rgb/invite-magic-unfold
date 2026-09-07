@@ -381,9 +381,9 @@ function Envelope({ guest, onOpen }: { guest: Guest; onOpen: () => void }) {
             src={seal}
             alt=""
             aria-hidden="true"
-            width={716}
-            height={716}
-            className={`absolute left-1/2 top-[82%] z-40 w-24 -translate-x-1/2 -translate-y-1/2 drop-shadow-md ${
+            width={516}
+            height={516}
+            className={`absolute left-1/2 top-[82%] z-40 w-18 -translate-x-1/2 -translate-y-1/2 drop-shadow-md ${
               opening ? "animate-seal-break" : "transition-transform duration-500 group-hover:scale-105"
             }`}
           />
@@ -741,7 +741,7 @@ function Invitation() {
           <header className="text-center">
             <p className="font-display text-3xl tracking-[0.35em] text-primary">A / I</p>
             <h1 className="script-name mt-6 text-5xl sm:text-6xl">
-              Aisha &amp; Haafith Ibraheem
+              Aisha &amp; Ibraheem
             </h1>
             <p className="tracking-invite mt-4 text-[0.6rem] uppercase text-muted-foreground">
               DIGITAL WEDDING INVITATION
