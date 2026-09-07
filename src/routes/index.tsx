@@ -87,7 +87,7 @@ const GUEST_LIST: Guest[] = [
   },
   {
     name: "Aaliyah Marcus",
-    allowedGuests: 1,
+    allowedGuests: 2,
   },
   {
     name: "Zakariyya Cloete",
@@ -107,7 +107,7 @@ const GUEST_LIST: Guest[] = [
   },
   {
     name: "Malikah Jabaar",
-    allowedGuests: 1,
+    allowedGuests: 2,
   },
   {
     name: "Aasiyah Ismail",
