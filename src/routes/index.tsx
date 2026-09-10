@@ -207,8 +207,25 @@ const GUEST_LIST: Guest[] = [
     allowedGuests: 2,
   },
   {
-    name: "Saeedah Majiet Kolia",
+    name: "Mohammad Deane Kolia & Saeedah Majiet Kolia",
+    aliases: ["mohammad deane kolia", "saeedah majiet kolia"],
     allowedGuests: 5,
+  },
+  {
+    name : "Imaan Kolia",
+    allowedGuests: 1,
+  },
+  {
+    name : "Sakeenah Kolia",
+    allowedGuests: 1,
+  },
+  {
+    name : "Mohammad Luai Kolia ",
+    allowedGuests: 1,
+  },
+  {
+    name : "Nurah Kolia",
+    allowedGuests: 1,
   },
   {
     name: "Chameen Abrahams",
