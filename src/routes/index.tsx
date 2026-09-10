@@ -55,10 +55,10 @@ type Guest = {
 const RSVP_DEFAULT_DATE = "25 September 2026";
 
 const GUEST_LIST: Guest[] = [
-  {
-    name : "John Doe",
-    allowedGuests: 0,
-  },
+  // {
+  //   name : "John Doe",
+  //   allowedGuests: 0,
+  // },
   {
     name: "Zaahidah Sampson",
     allowedGuests: 1,
@@ -641,16 +641,68 @@ function MainInvitation() {
 
           <Ornament />
 
+          {/*<div className="mx-auto grid max-w-md grid-cols-2 gap-6 text-center">*/}
+          {/*  <div>*/}
+          {/*    <Landmark*/}
+          {/*      className="mx-auto mb-3 size-7 stroke-primary/80"*/}
+          {/*      strokeWidth={1}*/}
+          {/*      aria-hidden="true"*/}
+          {/*    />*/}
+          {/*    <p className="tracking-invite text-[0.6rem] uppercase text-primary">*/}
+          {/*      Nikkah Ceremony*/}
+          {/*    </p>*/}
+          {/*    <p className="mt-3 font-display text-sm leading-6 text-muted-foreground">*/}
+          {/*      Sunday, 18 October 2026*/}
+          {/*      <br />*/}
+          {/*      <span className="text-foreground">9:00 AM</span>*/}
+          {/*      <br />*/}
+          {/*      Pinelands Islamic Centre*/}
+          {/*      <br />*/}
+          {/*      Nursery Way, Pinelands*/}
+          {/*      <br />*/}
+          {/*      Please join us as we begin this beautiful journey.*/}
+          {/*    </p>*/}
+          {/*  </div>*/}
+          {/*  <div className="border-l border-border/70">*/}
+          {/*    <Coffee*/}
+          {/*      className="mx-auto mb-3 size-7 stroke-primary/80"*/}
+          {/*      strokeWidth={1}*/}
+          {/*      aria-hidden="true"*/}
+          {/*    />*/}
+          {/*    <p className="tracking-invite text-[0.6rem] uppercase text-primary">*/}
+          {/*      Wedding High Tea*/}
+          {/*    </p>*/}
+          {/*    <p className="mt-3 font-display text-sm leading-6 text-muted-foreground">*/}
+          {/*      Sunday, 18 October 2026*/}
+          {/*      <br />*/}
+          {/*      <span className="text-foreground">4:00 PM (Guests arrive)</span>*/}
+          {/*      <br />*/}
+          {/*      High Tea at 4:30 PM*/}
+          {/*      <br />*/}
+          {/*      Café 51*/}
+          {/*      <br />*/}
+          {/*      51 Roodebloem Road, Woodstock*/}
+          {/*    </p>*/}
+          {/*  </div>*/}
+          {/*</div>*/}
+
           <div className="mx-auto grid max-w-md grid-cols-2 gap-6 text-center">
-            <div>
+            <a
+              href="https://www.google.com/maps/dir/?api=1&origin=current+location&destination=Pinelands+Islamic+Centre+Nursery+Way+Pinelands"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-pointer transition-opacity hover:opacity-75"
+            >
               <Landmark
                 className="mx-auto mb-3 size-7 stroke-primary/80"
                 strokeWidth={1}
                 aria-hidden="true"
               />
+
               <p className="tracking-invite text-[0.6rem] uppercase text-primary">
                 Nikkah Ceremony
               </p>
+
               <p className="mt-3 font-display text-sm leading-6 text-muted-foreground">
                 Sunday, 18 October 2026
                 <br />
@@ -662,16 +714,24 @@ function MainInvitation() {
                 <br />
                 Please join us as we begin this beautiful journey.
               </p>
-            </div>
-            <div className="border-l border-border/70">
+            </a>
+
+            <a
+              href="https://www.google.com/maps/dir/?api=1&origin=current+location&destination=Cafe+51+51+Roodebloem+Road+Woodstock+Cape+Town"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-l border-border/70 cursor-pointer transition-opacity hover:opacity-75"
+            >
               <Coffee
                 className="mx-auto mb-3 size-7 stroke-primary/80"
                 strokeWidth={1}
                 aria-hidden="true"
               />
+
               <p className="tracking-invite text-[0.6rem] uppercase text-primary">
                 Wedding High Tea
               </p>
+
               <p className="mt-3 font-display text-sm leading-6 text-muted-foreground">
                 Sunday, 18 October 2026
                 <br />
@@ -683,8 +743,9 @@ function MainInvitation() {
                 <br />
                 51 Roodebloem Road, Woodstock
               </p>
-            </div>
+            </a>
           </div>
+
 
           <blockquote className="mx-auto mt-10 max-w-md border border-border/70 px-6 py-5">
             <p
