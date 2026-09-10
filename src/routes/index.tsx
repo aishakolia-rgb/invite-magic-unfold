@@ -87,7 +87,7 @@ const GUEST_LIST: Guest[] = [
   },
   {
     name: "Aaliyah Marcus",
-    allowedGuests: 2,
+    allowedGuests: 1,
   },
   {
     name: "Zakariyya Cloete",
@@ -107,7 +107,7 @@ const GUEST_LIST: Guest[] = [
   },
   {
     name: "Malikah Jabaar",
-    allowedGuests: 2,
+    allowedGuests: 1,
   },
   {
     name: "Aasiyah Ismail",
@@ -147,6 +147,197 @@ const GUEST_LIST: Guest[] = [
     name: "Shaamil & Waseelah Sampson",
     aliases: ["shaamil sampson", "waseelah sampson"],
     allowedGuests: 2,
+  },
+  {
+    name: "Ismail Miller",
+    allowedGuests: 1,
+  },
+  {
+    name: "Mujaahid Miller",
+    allowedGuests: 1,
+  },
+  {
+    name: "Saabirah Miller",
+    allowedGuests: 1,
+  },
+  {
+    name: "Faizal & Ayesha Miller",
+    aliases: ["faizal miller", "ayesha miller"],
+    allowedGuests: 2,
+  },
+  {
+    name: "Sakeenah Miller & Imaad Awaldien",
+    aliases: ["sakeenah miller", "imaad awaldien"],
+    allowedGuests: 4,
+  },
+  {
+    name: "Safiyyah Miller & Sabeegh Philander",
+    aliases: ["safiyyah miller", "sabeegh philander"],
+    allowedGuests: 5,
+  },
+  {
+    name: "Fatimah Achmat",
+    allowedGuests: 1,
+  },
+  {
+    name: "Ma",
+    allowedGuests: 1,
+  },
+  {
+    name: "Aunty Kaashiefa",
+    allowedGuests: 1,
+  },
+  {
+    name: "Natheer Kolia & Zakia Abrahams",
+    aliases: ["natheer kolia", "zakia abrahams"],
+    allowedGuests: 2,
+  },
+  {
+    name: "Quanitah Kolia & Gerard Meder",
+    aliases: ["quanitah kolia", "gerard meder"],
+    allowedGuests: 2,
+  },
+  {
+    name: "Kaamillah Kolia",
+    allowedGuests: 1,
+  },
+  {
+    name: "Yaseen Kolia & Shaymaa Abdel Salam",
+    aliases: ["yaseen kolia", "shaymaa abdel salam"],
+    allowedGuests: 2,
+  },
+  {
+    name: "Saeedah Majiet Kolia",
+    allowedGuests: 5,
+  },
+  {
+    name: "Chameen Abrahams",
+    allowedGuests: 1,
+  },
+  {
+    name: "Belinda Abrahams",
+    allowedGuests: 1,
+  },
+  {
+    name: "Ebrahim Petersen",
+    allowedGuests: 1,
+  },
+  {
+    name: "Isgaak & Fadheelah Majiet",
+    aliases: ["isgaak majiet", "fadheelah majiet"],
+    allowedGuests: 2,
+  },
+  {
+    name: "Ibtisaam & Abdullah Wasserfall",
+    aliases: ["ibtisaam wasserfall", "abdullah wasserfall"],
+    allowedGuests: 2,
+  },
+  {
+    name: "Megan Manuel",
+    allowedGuests: 1,
+  },
+  {
+    name: "Heidi & Henry Ruiters",
+    aliases: ["heidi ruiters", "henry ruiters"],
+    allowedGuests: 2,
+  },
+  {
+    name: "Elizabeth Snyman",
+    allowedGuests: 1,
+  },
+  {
+    name: "Jade Pretorious",
+    allowedGuests: 1,
+  },
+  {
+    name: "Jody Pretorious",
+    allowedGuests: 1,
+  },
+  {
+    name: "Nuraan Salie",
+    allowedGuests: 1,
+  },
+  {
+    name: "Pedro Lamb",
+    allowedGuests: 1,
+  },
+  {
+    name: "Glynnis Idas",
+    allowedGuests: 1,
+  },
+  {
+    name: "Sharon Meyman",
+    allowedGuests: 1,
+  },
+  {
+    name: "Crystal Meyman & Kurt Meder",
+    aliases: ["crystal meyman", "kurt meder"],
+    allowedGuests: 2,
+  },
+  {
+    name: "Gabiba Talip",
+    allowedGuests: 2,
+  },
+  {
+    name: "Lester & Colleen Meyer",
+    aliases: ["lester meyer", "colleen meyer"],
+    allowedGuests: 2,
+  },
+  {
+    name: "Carol Bowers",
+    allowedGuests: 3,
+  },
+  {
+    name: "Kaylin Wagner",
+    allowedGuests: 2,
+  },
+  {
+    name: "Shaneel Singh",
+    allowedGuests: 2,
+  },
+  {
+    name: "Mariam Abrahams",
+    allowedGuests: 1,
+  },
+  {
+    name: "Fagrie & Faiza Meyer",
+    aliases: ["fagrie meyer", "faiza meyer"],
+    allowedGuests: 2,
+  },
+  {
+    name: "Faiq & Baby Meyer",
+    aliases: ["faiq meyer", "baby meyer"],
+    allowedGuests: 2,
+  },
+  {
+    name: "Shireen Daniels",
+    allowedGuests: 1,
+  },
+  {
+    name: "Julie Mullah",
+    allowedGuests: 1,
+  },
+  {
+    name: "Noor & Nazeema Abrahams",
+    aliases: ["noor abrahams", "nazeema abrahams"],
+    allowedGuests: 2,
+  },
+  {
+    name: "Gouwa Orrie",
+    allowedGuests: 1,
+  },
+  {
+    name: "Moulana Azeem Khatieb",
+    allowedGuests: 1,
+  },
+  {
+    name: "Fuad & Latiefa Behardien",
+    aliases: ["fuad behardien", "latiefa behardien"],
+    allowedGuests: 2,
+  },
+  {
+    name: "Faiza De Souza",
+    allowedGuests: 1,
   },
 ];
 
