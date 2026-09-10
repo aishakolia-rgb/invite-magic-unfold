@@ -361,6 +361,14 @@ const GUEST_LIST: Guest[] = [
     name: "Faiza De Souza",
     allowedGuests: 1,
   },
+  {
+    name: "Mickey Jardien",
+    allowedGuests: 1,
+  },
+  {
+    name: "Abdoulah Richards",
+    allowedGuests: 1,
+  },
 ];
 
 
