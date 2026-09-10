@@ -212,19 +212,20 @@ const GUEST_LIST: Guest[] = [
     allowedGuests: 5,
   },
   {
-    name : "Imaan Kolia",
+    name: "Imaan Kolia",
+    aliases: ["imaan kolia", "iman kolia"],
     allowedGuests: 1,
   },
   {
-    name : "Sakeenah Kolia",
+    name: "Sakeenah Kolia",
     allowedGuests: 1,
   },
   {
-    name : "Mohammad Luai Kolia ",
+    name: "Mohammad Luai Kolia",
     allowedGuests: 1,
   },
   {
-    name : "Nurah Kolia",
+    name: "Nurah Kolia",
     allowedGuests: 1,
   },
   {
@@ -357,6 +358,7 @@ const GUEST_LIST: Guest[] = [
     allowedGuests: 1,
   },
 ];
+
 
 function normalizeName(value: string) {
   return value
