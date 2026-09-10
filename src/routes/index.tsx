@@ -56,6 +56,10 @@ const RSVP_DEFAULT_DATE = "25 September 2026";
 
 const GUEST_LIST: Guest[] = [
   {
+    name : "John Doe",
+    allowedGuests: 0,
+  },
+  {
     name: "Zaahidah Sampson",
     allowedGuests: 1,
   },
